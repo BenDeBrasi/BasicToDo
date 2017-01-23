@@ -72,7 +72,27 @@ else:
 
 
 file_handle = open('todo.txt', 'wb+')
+
+"Add while loop to loop program. Find a way to auto-indent the rest"
+
+print("Commands:")
+print("---------")
+print("'at'- Add task")
+print("'al'- Add list")
+print("'dl'- Delete list")
+print("'dt'- Delete task")
+print("'rl'- Read list")
+print("'ml'- Read master list")
+print("'s'- shutdown program")
+print()
+
 mode = input("What do you want to do?")
+
+if mode == 's':
+    print("Program shutting down")
+    place_list_in_file(master_list)
+    file_handle.close()
+    exit()
 
 'Error check for user chosen task'
 if mode != 'at' and mode != 'al' and mode != 'dl' and mode != 'dt' and mode != 'rl' and mode != 'ml':
